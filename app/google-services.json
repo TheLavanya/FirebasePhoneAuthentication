@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "557764543109",
+    "firebase_url": "https://notesapp-3b688.firebaseio.com",
+    "project_id": "notesapp-3b688",
+    "storage_bucket": "notesapp-3b688.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557764543109:android:9d89f2d27c27da5d3adfec",
+        "android_client_info": {
+          "package_name": "com.lav.bluetoothscanning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557764543109-02b4aseoo0f0to67i6hj5ats7a9hd4qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGrZRD_nuYJzTRe6TIImjvNEg22GHoeKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557764543109-02b4aseoo0f0to67i6hj5ats7a9hd4qd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557764543109:android:47629910b3cae3a1",
+        "android_client_info": {
+          "package_name": "com.laxmi.notesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557764543109-02b4aseoo0f0to67i6hj5ats7a9hd4qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGrZRD_nuYJzTRe6TIImjvNEg22GHoeKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557764543109-02b4aseoo0f0to67i6hj5ats7a9hd4qd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
