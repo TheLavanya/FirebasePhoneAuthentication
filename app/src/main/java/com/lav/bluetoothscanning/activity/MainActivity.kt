@@ -11,8 +11,12 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.lav.bluetoothscanning.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 const val TAG = "BLE_SCAN_TEST"
 
@@ -25,7 +29,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initToolbar()
         //initBLE()
+        fetchUserInfo()
+    }
+
+    private fun initToolbar() {
+        setSupportActionBar(id_toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun fetchUserInfo() {
+        val user = FirebaseAuth.getInstance().currentUser
+        Log.i("UserInfo", user?.uid)
     }
 
     private fun initBLE() {
@@ -142,5 +158,26 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_sign_out -> {
+                FirebaseAuth.getInstance().signOut()
+                startFlowAgain()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun startFlowAgain() {
+        val intent = Intent(this, SplashAtivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
     }
 }

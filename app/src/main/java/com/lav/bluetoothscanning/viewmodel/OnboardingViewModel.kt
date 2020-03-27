@@ -10,91 +10,64 @@ import com.google.firebase.auth.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.lav.bluetoothscanning.activity.TAG
+import com.lav.bluetoothscanning.model.VerificationStatus
+import java.lang.Exception
 import java.util.concurrent.TimeUnit
 
 class OnboardingViewModel : ViewModel() {
 
-    private lateinit var mVerificationId: String
+    var verificationInProgress = false
+    lateinit var mVerificationId: String
+    lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
 
     var mobile: String? = null
+
     private val consentAgreedLiveData: MutableLiveData<Boolean> by lazy {
         MutableLiveData<Boolean>()
     }
-    private val redirectToVerifyLiveData: MutableLiveData<Boolean> by lazy {
-        MutableLiveData<Boolean>()
-    }
+    /* private val redirectToVerifyLiveData: MutableLiveData<Boolean> by lazy {
+         MutableLiveData<Boolean>()
+     }*/
 
     private val loginSuccessLiveData: MutableLiveData<Boolean> by lazy {
         MutableLiveData<Boolean>()
     }
 
-    private val phoneVerificationCodeLiveData: MutableLiveData<Pair<Boolean, String>> by lazy {
+    /*private val phoneVerificationCodeLiveData: MutableLiveData<Pair<Boolean, String>> by lazy {
         MutableLiveData<Pair<Boolean, String>>()
+    }*/
+
+    private val verificationStatusLiveData: MutableLiveData<VerificationStatus> by lazy {
+        MutableLiveData<VerificationStatus>()
     }
 
     fun isConsentAgreedData(): LiveData<Boolean> = consentAgreedLiveData
-    fun getRedirectToVerifyData(): LiveData<Boolean> = redirectToVerifyLiveData
+
+    //fun getRedirectToVerifyData(): LiveData<Boolean> = redirectToVerifyLiveData
     fun getLoginSuccessData(): LiveData<Boolean> = loginSuccessLiveData
-    fun getPhoneVerificationCodeData(): LiveData<Pair<Boolean, String>> =
-        phoneVerificationCodeLiveData
+    fun getPhoneVerificationStatusData(): LiveData<VerificationStatus> =
+        verificationStatusLiveData
 
     fun getVerificationId(): String {
         return mVerificationId
     }
+
 
     override fun onCleared() {
         super.onCleared()
         Log.i("OnboardingViewModel", "OnboardingViewModel destroyed!")
     }
 
-    fun redirectToVerify() {
+    /*fun redirectToVerify() {
         redirectToVerifyLiveData.postValue(true)
-    }
+    }*/
 
     fun setConsentAgreement() {
         consentAgreedLiveData.postValue(true)
     }
 
-    //the method is sending verification code
-    fun sendVerificationCode(mobile: String) {
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-            "+91$mobile",
-            60,
-            TimeUnit.SECONDS,
-            TaskExecutors.MAIN_THREAD,
-            mCallbacks
-        )
-    }
 
-    //the callback to detect the verification status
-    private val mCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
-        override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
-            //Getting the code sent by SMS
-            val code = phoneAuthCredential.smsCode
-
-            //sometime the code is not detected automatically
-            //in this case the code will be null
-            //so user has to manually enter the code
-            if (code != null) {
-                phoneVerificationCodeLiveData.postValue(Pair(true, code))
-            }
-        }
-
-        override fun onVerificationFailed(p0: FirebaseException) {
-            val msg = p0.localizedMessage
-            // Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
-            Log.i(TAG, msg)
-        }
-
-        override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
-            super.onCodeSent(p0, p1)
-            mVerificationId = p0
-        }
-    }
-
-    fun addDetailInUserTable() {
-        val currentUser = FirebaseAuth.getInstance().currentUser
+    fun addDetailInUserTable(currentUser: FirebaseUser?) {
         currentUser?.let {
             val user = hashMapOf(
                 "mobile" to currentUser.phoneNumber,
@@ -119,5 +92,12 @@ class OnboardingViewModel : ViewModel() {
                     loginSuccessLiveData.postValue(false)
                 }
         }
+    }
+
+    private fun getVerificationStatusModel(
+        status: Boolean,
+        code: String?, error: Exception?
+    ): VerificationStatus {
+        return VerificationStatus(status, code, error)
     }
 }

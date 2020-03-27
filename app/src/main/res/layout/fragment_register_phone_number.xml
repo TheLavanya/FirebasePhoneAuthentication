@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="20dp">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -13,9 +15,7 @@
         android:text="@string/register_mobile_number_label"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/id_tv_sublabel"
@@ -25,9 +25,7 @@
         android:text="@string/register_mobile_number_sublabel"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_tv_label" />
+        android:textStyle="normal" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/id_tv_family_label"
@@ -37,9 +35,7 @@
         android:text="@string/setting_up_family_label"
         android:textColor="@android:color/black"
         android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_tv_sublabel" />
+        android:textStyle="normal" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/id_tv_family_sublabel"
@@ -48,9 +44,7 @@
         android:text="@string/setting_up_family_sublabel"
         android:textColor="@android:color/black"
         android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_tv_family_label" />
+        android:textStyle="normal" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/id_tv_mobile_no_label"
@@ -60,14 +54,13 @@
         android:text="@string/mobile_number_label"
         android:textColor="@android:color/black"
         android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_tv_family_sublabel" />
+        android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/id_number_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/id_one_time_pin_label"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/id_editTextCode"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/id_tv_mobile_no_label">
@@ -94,6 +87,21 @@
             android:textStyle="normal" />
     </LinearLayout>
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/id_editTextCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
+        android:digits="0123456789"
+        android:hint="Enter verification code"
+        android:maxLength="10" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/id_one_time_pin_label"
         android:layout_width="wrap_content"
@@ -101,20 +109,38 @@
         android:layout_marginBottom="10dp"
         android:text="@string/one_time_label"
         android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toTopOf="@id/id_button_proceed"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:textStyle="normal" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/id_button_proceed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="@string/proceed_label"
+        android:text="@string/proceed_btn_label"
         android:textColor="@android:color/white"
         android:textSize="15sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textStyle="normal" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_button_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/verify_btn_label"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_button_resend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/resend_btn_label"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+</LinearLayout>

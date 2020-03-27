@@ -8,7 +8,9 @@
     <string name="mobile_number_label">Mobile number</string>
     <string name="enter_mobile_number_hint">Enter your mobile number</string>
     <string name="one_time_label">We\'ll text you a One-Time Pin(OTP)</string>
-    <string name="proceed_label">Proceed</string>
+    <string name="proceed_btn_label">Proceed</string>
+    <string name="verify_btn_label">Verify</string>
+    <string name="resend_btn_label">Resend</string>
 
     <string name="consent_screen_label">Your consent is needed for the following:</string>
     <string name="consent_point1">To store your mobile number in a secured TraceTogether registry</string>
@@ -16,5 +18,18 @@
     if they are confirmed or suspected to have COVID-19</string>
     <string name="agree_label">I agree</string>
 
+    <string name="consent_info_label">Help stop the spread of COVID-19 by turning Bluetooth on</string>
+    <string name="consent_info_detail">If you had close contact with a COVID-19 case , we help the Ministry
+        of Health(MOH) call you more quickly, to provide guidance and care.</string>
+
+    <string name="consent_info_subdetail">To protect those around you, MOH may also ask you to share your data.</string>
+    <string name="consent_help_button_label">I want to help</string>
+
     <string name="enter_valid_code_error">Enter valid code</string>
+    <string name="status_code_sent">Code Sent</string>
+    <string name="status_verification_failed">Verification failed</string>
+    <string name="status_verification_succeeded">Verification succeeded</string>
+    <string name="instant_validation">(instant validation)</string>
+    <string name="status_sign_in_failed">Sign-in failed</string>
+
 </resources>

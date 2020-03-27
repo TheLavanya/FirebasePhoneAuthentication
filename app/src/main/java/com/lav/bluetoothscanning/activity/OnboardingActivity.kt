@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProviders
 import com.lav.bluetoothscanning.R
 import com.lav.bluetoothscanning.fragment.ConsentFragment
 import com.lav.bluetoothscanning.fragment.RegisterPhoneNumberFragment
-import com.lav.bluetoothscanning.fragment.VerifyPhoneNumberFragment
 import com.lav.bluetoothscanning.viewmodel.OnboardingViewModel
 
 class OnboardingActivity : AppCompatActivity() {
@@ -36,7 +35,7 @@ class OnboardingActivity : AppCompatActivity() {
     private fun initObserver() {
         viewModel.isConsentAgreedData().observe(this, getConsentAgreedObserver())
 
-        viewModel.getRedirectToVerifyData().observe(this, getRedirectToVerifyNumberScreen())
+        //viewModel.getRedirectToVerifyData().observe(this, getRedirectToVerifyNumberScreen())
 
         viewModel.getLoginSuccessData().observe(this, getLoginSuccessObserver())
     }
@@ -67,23 +66,17 @@ class OnboardingActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun getRedirectToVerifyNumberScreen(): Observer<Boolean> {
+    /*private fun getRedirectToVerifyNumberScreen(): Observer<Boolean> {
         return Observer {
             if (it) {
                 redirectToVerifyNumberScreen()
             }
         }
-    }
+    }*/
 
-    private fun redirectToConsent() {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.id_container, ConsentFragment(), null)
-            .commit()
-    }
-
-    private fun redirectToVerifyNumberScreen() {
+    /*private fun redirectToVerifyNumberScreen() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.id_container, VerifyPhoneNumberFragment(), null)
             .commit()
-    }
+    }*/
 }
