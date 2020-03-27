@@ -8,7 +8,7 @@ android {
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "com.lav.bluetoothscanning"
+        applicationId "com.lav.bluetoothscanning.test"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -38,5 +38,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.3.0'
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    //ViewModel
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+    // Firestore (Kotlin)
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.4.1'
 
 }

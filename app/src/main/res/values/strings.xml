@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">BluetoothScanning</string>
+
+    <string name="register_mobile_number_label">Register your mobile number</string>
+    <string name="register_mobile_number_sublabel">We\'ll contact you if you had close contact with a COVID-19 case.</string>
+    <string name="setting_up_family_label">Setting up for your family?.</string>
+    <string name="setting_up_family_sublabel">Use their number instead of yours</string>
+    <string name="mobile_number_label">Mobile number</string>
+    <string name="enter_mobile_number_hint">Enter your mobile number</string>
+    <string name="one_time_label">We\'ll text you a One-Time Pin(OTP)</string>
+    <string name="proceed_label">Proceed</string>
+
+    <string name="consent_screen_label">Your consent is needed for the following:</string>
+    <string name="consent_point1">To store your mobile number in a secured TraceTogether registry</string>
+    <string name="consent_point2">To allow TraceTogether users to send MOH information of encounters with you,
+    if they are confirmed or suspected to have COVID-19</string>
+    <string name="agree_label">I agree</string>
+
+    <string name="enter_valid_code_error">Enter valid code</string>
 </resources>

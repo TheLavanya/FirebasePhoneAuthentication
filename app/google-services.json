@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "557764543109",
-    "firebase_url": "https://notesapp-3b688.firebaseio.com",
-    "project_id": "notesapp-3b688",
-    "storage_bucket": "notesapp-3b688.appspot.com"
+    "project_number": "745270310648",
+    "firebase_url": "https://firestore-ed6e0.firebaseio.com",
+    "project_id": "firestore-ed6e0",
+    "storage_bucket": "firestore-ed6e0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:557764543109:android:9d89f2d27c27da5d3adfec",
+        "mobilesdk_app_id": "1:745270310648:android:c56feb15e92199a251ad0d",
         "android_client_info": {
-          "package_name": "com.lav.bluetoothscanning"
+          "package_name": "com.google.firebase.example.fireeats"
         }
       },
       "oauth_client": [
         {
-          "client_id": "557764543109-02b4aseoo0f0to67i6hj5ats7a9hd4qd.apps.googleusercontent.com",
+          "client_id": "745270310648-ogtuiva7hted25r5asukt97co7dabfhc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDGrZRD_nuYJzTRe6TIImjvNEg22GHoeKM"
+          "current_key": "AIzaSyA95CmtVNN7mnv-JcGUzaqMbA7rXd6C5D0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "557764543109-02b4aseoo0f0to67i6hj5ats7a9hd4qd.apps.googleusercontent.com",
+              "client_id": "745270310648-ogtuiva7hted25r5asukt97co7dabfhc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -37,27 +37,35 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:557764543109:android:47629910b3cae3a1",
+        "mobilesdk_app_id": "1:745270310648:android:a487ecdb346de41851ad0d",
         "android_client_info": {
-          "package_name": "com.laxmi.notesapp"
+          "package_name": "com.lav.bluetoothscanning.test"
         }
       },
       "oauth_client": [
         {
-          "client_id": "557764543109-02b4aseoo0f0to67i6hj5ats7a9hd4qd.apps.googleusercontent.com",
+          "client_id": "745270310648-8e6r7m0ece8ml6k1glc4qqctq0tg7m1r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lav.bluetoothscanning.test",
+            "certificate_hash": "3f61ce9e0e6c5dc9e30714985f661c15b61189dc"
+          }
+        },
+        {
+          "client_id": "745270310648-ogtuiva7hted25r5asukt97co7dabfhc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDGrZRD_nuYJzTRe6TIImjvNEg22GHoeKM"
+          "current_key": "AIzaSyA95CmtVNN7mnv-JcGUzaqMbA7rXd6C5D0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "557764543109-02b4aseoo0f0to67i6hj5ats7a9hd4qd.apps.googleusercontent.com",
+              "client_id": "745270310648-ogtuiva7hted25r5asukt97co7dabfhc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
